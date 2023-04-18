@@ -1,0 +1,82 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+class operations {
+//declaring member variables
+ public:
+    int num1, num2, e;
+//defining member function or methods
+ public:
+    void input() {
+      cout << "Enter two numbers to perform operations on: \n";
+      cin >> num1 >> num2;
+      cout << "\n";
+    }
+ public:
+    void addition() {
+      cout << "Addition = " << num1 + num2;
+      cout << "\n";
+    }
+    
+    void subtraction() {
+      cout << "Subtraction = " << num1 - num2;
+      cout << "\n";
+    }
+    
+    void multiplication() {
+      cout << "Multiplication = " << num1 * num2;
+      cout << "\n";
+    }
+    
+    void division() {
+      cout << "Division = " << (float) num1 / num2;
+      cout << "\n";
+    }
+    
+    void kvadrat() {
+      cout << "Kvadrat = " << pow(num1, num2);
+      cout << "\n";
+    }
+    
+    void kvadrat1() {
+      cout << "Kvadrat1 = " << pow(e,(num1+num2));
+      cout << "\n";
+    }
+};
+//Defining the main method to access the members of the class
+int main() {
+int choice;
+cout << " ===== Program to perform basic operations using Class, in CPP ===== \n\n";
+//Declaring class object to access class members from outside the class
+operations op;
+cout << "\nCalling the input() function from the main() method\n";
+op.input();
+
+cout<<"\nOdberete operacija: \n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Kvadrat\n6. Kvadrat1\n";
+cin>>choice;
+
+switch(choice) {
+case 1:
+  cout << "\nCalling the addition() function from the main() method\n";
+  op.addition(); break;
+case 2:
+  cout << "\nCalling the subtraction() function from the main() method\n";
+  op.subtraction(); break;
+case 3:
+  cout << "\nCalling the multiplication() function from the main() method\n";
+  op.multiplication(); break;
+case 4:
+  cout << "\nCalling the division() function from the main() method\n";
+  op.division();  break;
+case 5: 
+  cout << "\nCalling the kvadrat() function from the main() method\n";
+  op.kvadrat(); break;
+case 6:
+  cout << "\nCalling the kvadrat1() function from the main() method\n";
+  op.kvadrat1(); break;
+default:
+ cout << "\nExiting the main() method\n\n\n";
+ break;
+}
+return 0;
+}
