@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main()
+{
+    string filename;
+    cout << "Vnesete ime na fajlot: ";
+    cin >> filename;
+    cin.ignore(); 
+    ofstream outFile(filename, ios::app);
+
+    if (!outFile)
+    {
+        cerr << "Greska! Ne mozi da se otvori fajlot za pisuvanje." << endl;
+        return 1;
+    }
+
+    string textToAdd;
+    cout << "Vnesete tekst koj ke se dodade vo fajlot: ";
+    getline(cin, textToAdd);
+
+
+    outFile << textToAdd << endl;
+    outFile.close();
+
+    return 0;
+}

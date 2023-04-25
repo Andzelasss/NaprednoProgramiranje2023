@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+    string sentence;
+    cout << "Vnesete recenica: ";
+    getline(cin, sentence);
+
+    bool has_lower = false; int lower=0;
+    bool has_upper = false; int upper=0;
+    bool has_digit = false; int digit=0;
+    bool has_special = false; int special=0;
+    int length = sentence.length();
+
+    for (int i = 0; i < length; i++) {
+        char c = sentence[i];
+
+        if (islower(c)) {
+            has_lower = true;
+            lower++;
+        } else if (isupper(c)) {
+            has_upper = true;
+            upper++;
+        } else if (isdigit(c)) {
+            has_digit = true;
+            digit++;
+        } else if (!isalnum(c)) {
+            has_special = true;
+            special++;
+        }
+    }
+
+        cout << "Recenicata " << sentence << " ima:\n";
+    if (has_lower) {
+        cout <<lower<< " - Mali bukvi\n";
+    }
+    if (has_upper) {
+        cout <<upper<< " - Golemi bukvi\n";
+    }
+    if (has_digit) {
+        cout <<digit<< " - Brojki\n";
+    }
+    if (has_special) {
+        cout <<special<< " - Specijalni znaci\n";
+    }
+
+       cout << length << "\t- karakteri vkupno\n";
+
+    return 0;
+}
